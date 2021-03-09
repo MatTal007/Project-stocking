@@ -1,2 +1,13 @@
 <h1>Stocking</h1>
-<p>Welcome Stockers (suckers)</p>
+
+<%= form_tag root_path, :method => 'POST' do %>
+    <%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+    <%= submit_tag 'Lookup' %>
+<% end %>
+
+<br/>
+
+<% if @stocks %>
+    Company: <%= @stocks.company_name %><br/>
+    Latest price: $<%= @stocks.latest_price %><br/>
+<% end %> 
