@@ -8,6 +8,15 @@
 <br/>
 
 <% if @stocks %>
-    Company: <%= @stocks.company_name %><br/>
-    Latest price: $<%= @stocks.latest_price %><br/>
+    <% if @stock == "" %>
+        That stock doesn't exist!
+    <% end %>
+    Company: <%= @stocks.company_name %> <br/>
+    Latest price: $<%= @stocks.latest_price %> <br/>
+<% elsif @nothing %> 
+    <%= @nothing %>
 <% end %> 
+
+<% if @error %>
+    <%= @error %>
+<% end %>
