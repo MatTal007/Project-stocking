@@ -34,7 +34,7 @@ gem 'stock_quote', '~> 3.0'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development, :test do
