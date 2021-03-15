@@ -1,22 +1,20 @@
 <h1>Stocking</h1>
 
 <%= form_tag root_path, :method => 'POST' do %>
-    <%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
-    <%= submit_tag 'Lookup' %>
+	<%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+	<%= submit_tag 'Lookup' %>
 <% end %>
+
 
 <br/>
 
-<% if @stocks %>
-    <% if @stock == "" %>
-        That stock doesn't exist!
-    <% end %>
-    Company: <%= @stocks.company_name %> <br/>
-    Latest price: $<%= @stocks.latest_price %> <br/>
-<% elsif @nothing %> 
-    <%= @nothing %>
-<% end %> 
-
-<% if @error %>
+<% if @stock %>
+	Company: <%= @stock.company_name %><br/>
+	Latest price: $<%= @stock.latest_price %><br/>
+<% elsif @nothing %>
+	<%= @nothing %>
+<% elsif @error %>
     <%= @error %>
 <% end %>
+
+
